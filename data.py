@@ -86,9 +86,7 @@ class Disciplines(Base):
 	def __repr__(self):
 		return self.discipline + ' : ' + self.name
 
-#hueta = 'ar'
-#lolkek = 're'
-#session.add(User(hueta, lolkek))
+#session.add(User('hueta', 'lolkek'))
 #session.commit()
 #session.close()
 #print((session.execute(text("SELECT nickname FROM user")).first()).nickname) - works
