@@ -4,9 +4,10 @@ from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy.pool import QueuePool
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from db_init import result_engine
 import os
 
-engine = create_engine('mysql+mysqldb://root:123456@localhost:3306/cherry', echo = False, poolclass = QueuePool)
+engine = create_engine(result_engine(), echo = False, poolclass = QueuePool)
 Session = sessionmaker(bind = engine)
 Base = declarative_base()
 session = Session()
@@ -85,3 +86,5 @@ class Disciplines(Base):
 
 	def __repr__(self):
 		return self.discipline + ' : ' + self.name
+
+Base.metadata.create_all(engine)

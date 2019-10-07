@@ -4,3 +4,4 @@ wtforms
 flask_login
 werkzeug
 sqlalchemyw
+sudo apt-get install -y python3-mysqldb

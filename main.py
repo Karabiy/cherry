@@ -92,5 +92,5 @@ def logout():
 def load_user(id):
 	return session.query(User).filter(User.id == id).first()
 
-if (__name__='__main__'):
+if (__name__=='__main__'):
 	app.run()
